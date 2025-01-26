@@ -1,20 +1,19 @@
-import { Feature } from "@/types/feature";
+interface SingleFeatureProps {
+  feature: {
+    id: number;
+    icon: string;
+    title: string;
+    paragraph: string;
+  };
+}
 
-const SingleFeature = ({ feature }: { feature: Feature }) => {
+const SingleFeature = ({ feature }: SingleFeatureProps) => {
   const { icon, title, paragraph } = feature;
   return (
-    <div className="w-full">
-      <div className="wow fadeInUp" data-wow-delay=".15s">
-        <div className="mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
-          {icon}
-        </div>
-        <h3 className="mb-5 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-          {title}
-        </h3>
-        <p className="pr-[10px] text-base font-medium leading-relaxed text-body-color">
-          {paragraph}
-        </p>
-      </div>
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{icon}</div>
+      <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-600">{paragraph}</p>
     </div>
   );
 };

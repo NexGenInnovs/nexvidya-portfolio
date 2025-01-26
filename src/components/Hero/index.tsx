@@ -105,31 +105,13 @@ const Hero = () => {
           {/* Right Column - Image */}
           <div className="relative lg:ml-4">
             <Image
-              src="/images/hero/app-mockup.png"
+              src="/images/hero/hero-image.png"
               alt="School Management System App"
               width={600}
               height={800}
               className="relative z-10"
               priority
             />
-            <div className="absolute -right-4 top-1/4 z-0">
-              <svg
-                className="h-20 w-20 text-blue-200"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
-              </svg>
-            </div>
-            <div className="absolute -bottom-4 left-1/4 z-0">
-              <svg
-                className="h-16 w-16 text-pink-200"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M20.2739 9.86883L16.8325 4.95392L11.9176 1.51248L7.00267 4.95392L3.56124 9.86883L3.56124 15.8251L7.00267 20.74L11.9176 24.1814L16.8325 20.74L20.2739 15.8251L20.2739 9.86883Z" />
-              </svg>
-            </div>
           </div>
         </div>
       </div>

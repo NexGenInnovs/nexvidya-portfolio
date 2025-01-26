@@ -13,7 +13,6 @@ module.exports = {
       center: true,
       padding: "1rem",
     },
-
     screens: {
       xs: "450px",
       // => @media (min-width: 450px) { ... }
@@ -57,7 +56,25 @@ module.exports = {
           light: "#F0F2F9",
         },
       },
-
+      animation: {
+        blob: "blob 7s infinite",
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        },
+      },
       boxShadow: {
         signUp: "0px 5px 10px rgba(4, 10, 34, 0.2)",
         one: "0px 2px 3px rgba(7, 7, 77, 0.05)",

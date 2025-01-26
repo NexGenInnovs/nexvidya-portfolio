@@ -1,3 +1,4 @@
+import React from 'react';
 import SingleFeature from "./SingleFeature";
 import featuresData from "./featuresData";
 

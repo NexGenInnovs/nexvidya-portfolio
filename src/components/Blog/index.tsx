@@ -4,8 +4,9 @@ import SectionTitle from "../Common/SectionTitle";
 import SingleBlog from "./SingleBlog";
 import blogData from "./blogData";
 import { useEffect, useState } from "react";
+import { ComponentProps } from "@/types/componentProps";
 
-const Blog = () => {
+const Blog = ({id}: ComponentProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ const Blog = () => {
 
   return (
     <section
-      id="blog"
+      id={id}
       className="py-20 bg-gradient-to-r from-pink-100 via-purple-100 to-blue-200 overflow-hidden"
     >
       <div className="container mx-auto px-4">
@@ -34,14 +35,16 @@ const Blog = () => {
           {/* Navigation Buttons */}
           <button 
             onClick={() => setCurrentIndex(prev => prev === 0 ? blogData.length - 3 : prev - 1)}
+            title="Previous Slide"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-300"
           >
             <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
+              </svg>
+            </button>
           <button 
             onClick={() => setCurrentIndex(prev => prev === blogData.length - 3 ? 0 : prev + 1)}
+            title="Next Slide"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-300"
           >
             <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,6 +70,7 @@ const Blog = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
+                title={`Go to slide ${index + 1}`}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   currentIndex === index ? 'bg-purple-600 w-4' : 'bg-purple-300'
                 }`}

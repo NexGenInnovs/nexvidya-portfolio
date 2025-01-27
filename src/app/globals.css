@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.scroll-container {
+  scroll-snap-type: y mandatory; /* Enables vertical scroll snapping */
+  overflow-y: scroll; /* Enables vertical scrolling */
+  height: 100vh; /* Ensures container takes full viewport height */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.scroll-container > section {
+  scroll-snap-align: start; /* Each section snaps to the start */
+  height: 100vh; /* Each section takes full viewport height */
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  h1 { @apply font-bold }
+  h2 { @apply font-bold }
+  h3 { @apply font-semibold }
+  h4 { @apply font-semibold }
+  
+  body {
+    @apply font-sans font-normal;
+  }
+}
+
 @layer utilities {
   .animation-delay-2000 {
     animation-delay: 2s;

@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { ComponentProps } from "@/types/componentProps";
 
-const Products = () => {
+const Products = ({id}: ComponentProps) => {
   const [activeApp, setActiveApp] = useState<'web' | 'mobile'>('web');
 
   const webFeatures = [
@@ -19,7 +20,7 @@ const Products = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-r from-pink-100 via-purple-100 to-blue-200 px-6 py-16 lg:px-8 lg:py-24">
+    <section id={id} className="relative min-h-screen bg-gradient-to-r from-pink-100 via-purple-100 to-blue-200 px-6 py-16 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl h-full flex flex-col">
         <div className="text-center mb-12">
           <span className="text-blue-600 font-medium">Our Products</span>

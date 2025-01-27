@@ -1,35 +1,38 @@
-import { Menu } from "@/types/menu";
-
-const menuData: Menu[] = [
+const menuData = [
   {
     id: 1,
     title: "Company",
-    path: "/company",
+    path: "/#about",
     newTab: false,
+    navLink: false
   },
   {
     id: 2,
     title: "Features",
-    path: "/features",
+    path: "/#features",
     newTab: false,
+    navLink: true
   },
   {
     id: 3,
     title: "Products",
-    path: "/products",
+    path: "/#products",
     newTab: false,
+    navLink: true
   },
   {
     id: 4,
     title: "Resources",
-    path: "/resources",
+    path: "/#blog",
     newTab: false,
+    navLink: true
   },
   {
     id: 5,
     title: "Contacts",
-    path: "/contacts",
+    path: "/#contact",
     newTab: false,
+    navLink: false
   }
 ];
 

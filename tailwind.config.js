@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 
 module.exports = {
   content: [
@@ -33,6 +35,10 @@ module.exports = {
       // => @media (min-width: 1400px) { ... }
     },
     extend: {
+      fontFamily: {
+        'sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
+        'heading': ['Poppins', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         current: "currentColor",
         transparent: "transparent",

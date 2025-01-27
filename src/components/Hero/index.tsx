@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ComponentProps } from "@/types/componentProps";
 
 const features = [
   { id: 1, text: "Student Management" },
@@ -12,11 +13,11 @@ const features = [
   { id: 8, text: "Parent Portal" },
 ];
 
-const Hero = () => {
+const Hero = ({id}: ComponentProps) => {
   return (
     <>
       <section
-        id="home"
+        id={id}
         className="relative z-10 overflow-hidden pt-[150px] pb-16 md:pt-[180px] md:pb-[120px] xl:pt-[210px] xl:pb-[160px] 2xl:pt-[240px] 2xl:pb-[180px] bg-gradient-to-r from-pink-100 via-purple-100 to-blue-200 px-6 py-16 lg:px-8 lg:py-24"
       >
         <div className="mx-auto max-w-7xl">
@@ -98,10 +99,10 @@ const Hero = () => {
                   />
                 </svg>
                 <a
-                  href="mailto:support@schoolsystem.com"
+                  href="mailto:support@nexgeninnovs.com"
                   className="hover:text-blue-600"
                 >
-                  support@schoolsystem.com
+                  support@nexgeninnovs.com
                 </a>
               </div>
             </div>

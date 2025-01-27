@@ -37,7 +37,7 @@ const Header = () => {
     >
       <div className={`container mx-auto px-4 h-full flex items-center transition-all duration-300`}>
         <div className={`relative flex w-full items-center justify-between`}>
-          <div className={`w-40 transition-all duration-300 ${sticky ? 'w-24' : 'w-28'}`}>
+          <div className={`w-28 transition-all duration-300 ${sticky ? 'w-24' : 'w-28'}`}>
             <Link href="/" className="block">
               <Image
                 src="/images/logo/logo.png"

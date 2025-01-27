@@ -1,57 +1,69 @@
+'use client';
+
 import { Blog } from "@/types/blog";
 import Image from "next/image";
 import Link from "next/link";
 
 const SingleBlog = ({ blog }: { blog: Blog }) => {
-  const { title, image, paragraph, author, tags, publishDate } = blog;
+  const { title, image, paragraph, btnText, btnHref } = blog;
   return (
-    <>
-      <div className="group relative overflow-hidden rounded-sm bg-white shadow-one duration-300 hover:shadow-two dark:bg-dark dark:hover:shadow-gray-dark">
-        <Link
-          href="/blog-details"
-          className="relative block aspect-[37/22] w-full"
-        >
-          <span className="absolute right-6 top-6 z-20 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold capitalize text-white">
-            {tags[0]}
-          </span>
-          <Image src={image} alt="image" fill />
+    <div className="group relative w-[380px] flex-shrink-0">
+      {/* Background gradient that shows on hover */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur"></div>
+      
+      {/* Main content */}
+      <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg transition-all duration-500 group-hover:translate-y-[-8px] group-hover:shadow-2xl overflow-hidden h-[450px]">
+        {/* Image */}
+        <Link href={btnHref} className="block relative">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-10"></div>
+          <Image 
+            src={image} 
+            alt={title}
+            width={380}
+            height={200}
+            className="h-[200px] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
         </Link>
-        <div className="p-6 sm:p-8 md:px-6 md:py-8 lg:p-8 xl:px-5 xl:py-8 2xl:p-8">
-          <h3>
-            <Link
-              href="/blog-details"
-              className="mb-4 block text-xl font-bold text-black hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl"
-            >
+
+        {/* Content */}
+        <div className="p-6">
+          <h3 className="mb-3 text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300 line-clamp-2">
+            <Link href={btnHref}>
               {title}
             </Link>
           </h3>
-          <p className="mb-6 border-b border-body-color border-opacity-10 pb-6 text-base font-medium text-body-color dark:border-white dark:border-opacity-10">
+          <p className="text-gray-600 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed mb-4 line-clamp-3">
             {paragraph}
           </p>
-          <div className="flex items-center">
-            <div className="mr-5 flex items-center border-r border-body-color border-opacity-10 pr-5 dark:border-white dark:border-opacity-10 xl:mr-3 xl:pr-3 2xl:mr-5 2xl:pr-5">
-              <div className="mr-4">
-                <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                  <Image src={author.image} alt="author" fill />
-                </div>
-              </div>
-              <div className="w-full">
-                <h4 className="mb-1 text-sm font-medium text-dark dark:text-white">
-                  By {author.name}
-                </h4>
-                <p className="text-xs text-body-color">{author.designation}</p>
-              </div>
-            </div>
-            <div className="inline-block">
-              <h4 className="mb-1 text-sm font-medium text-dark dark:text-white">
-                Date
-              </h4>
-              <p className="text-xs text-body-color">{publishDate}</p>
-            </div>
+
+          {/* Button */}
+          <div className="absolute bottom-6 right-6">
+            <Link
+              href={btnHref}
+              className="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-700 transition-colors duration-300"
+            >
+              {btnText}
+              <svg 
+                className="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
+
+        {/* Decorative gradient line */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left transition-transform duration-500 scale-x-0 group-hover:scale-x-100"></div>
       </div>
-    </>
+    </div>
   );
 };
 

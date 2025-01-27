@@ -35,24 +35,6 @@ const featuresData = [
     title: "Real-time Analytics",
     paragraph: "Get instant insights with our comprehensive reporting system."
   },
-  {
-    id: 7,
-    icon: "🔄",
-    title: "Automatic Updates",
-    paragraph: "Stay up-to-date with automatic feature updates and improvements."
-  },
-  {
-    id: 8,
-    icon: "📚",
-    title: "Resource Management",
-    paragraph: "Efficiently manage all your school resources in one place."
-  },
-  {
-    id: 9,
-    icon: "💳",
-    title: "Fee Management",
-    paragraph: "Streamline fee collection and financial management processes."
-  }
 ];
 
 export default featuresData;

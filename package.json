@@ -1,6 +1,7 @@
 {
   "name": "nexvidya-portfolio",
   "version": "2.0.0",
+  "homepage": "https://nexvidya.nexgeninnovs.com",
   "private": true,
   "scripts": {
     "dev": "next dev",
